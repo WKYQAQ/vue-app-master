@@ -9,7 +9,7 @@
         <div v-if="data.waiter!=null">
           员工：{{data.waiter.realname}}</div>
         <div v-if="data.waiter!=null">
-          员工编号:{{data.waiter.telephone}}</div>
+          员工联系方式:{{data.waiter.telephone}}</div>
         <div>设备编号：HX21021</div>
         <div>工单类型：装机</div>
         <div>服务时间：{{data.orderTime | datefmt}}</div>
