@@ -10,6 +10,13 @@
           员工：{{data.waiter.realname}}</div>
         <div v-if="data.waiter!=null">
           员工联系方式:{{data.waiter.telephone}}</div>
+        <div v-if="data.orderLines != null">服务：
+          <span 
+            v-for="line in data.orderLines" 
+            :key="line.id">
+              {{line.product.name}}
+          </span>
+        </div>
         <div>设备编号：HX21021</div>
         <div>工单类型：装机</div>
         <div>服务时间：{{data.orderTime | datefmt}}</div>
@@ -21,7 +28,7 @@
       </van-col>
     </van-row>
     <div class="text-right">
-      共计 个服务，合计￥ {{data.total}}
+      共计 {{data.orderLines.length}} 个服务，合计￥ {{data.total}}
     </div>
   </div>
 </template>
